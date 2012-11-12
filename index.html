@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Code Injection</title>
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/css"> 
+    
+    /* NAVIGATION STYLES */
+    .dci_header{
+        position: fixed !important;
+        width:100%;
+        height:90px;
+        z-index:9999;
+    }
+    .standardNav{
+        position: fixed !important;
+        overflow: visible;
+        top: 0;
+        right: 50%;
+        width: 435px;
+        z-index: 9999;
+        margin-right: -450px;
+        text-align: right;
+    }
+    
+    .standardNav li{
+        display: block;
+        float: left;
+    }
+    
+    .standardNav li a{
+        display: block; 
+    }   
+    
+    </style>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- / -->
+
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+        
+                //Page scrolling
+        $('a[href*=#]').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var $target = $(this.hash);
+              $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+                if ($target.length) {
+                    var targetOffset = $target.offset().top - 90;
+                    $('html,body')
+                    .animate({scrollTop: targetOffset}, 1000);
+                    return false;
+                }
+            }
+        });
+    
+        //Make the top men active when on that section
+        $("#top-bar-menu ul li a").click(function() {
+            $("#top-bar-menu ul li a").removeClass('active');
+            $(this).addClass("active"); //Add "active" class to selected tab
+        });
+  
+                    
+    });
+        
+    </script>
+</head>
+<body>
+    <header class="dci_header">
+        <div class="dci_wrapper">
+            <a class="dci_donate_us" href="#donate_uddress">Donate Us</a>
+            <nav class="dci_mainmenu_wrapper">
+                <ul id="nav" class="dci_mainmenu pageScrollerNav standardNav top light">
+                    <li><a href="#description">Description</a></li>
+                    <li><a href="#feature">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="dci_clearfix"></div>
+        </div>
+    </header>
+    <div id="description" class=" dci_main_wrapper">
+        <div class="section dci_wrapper_for_top_rules">
+            <div class="dci_wrapper">
+                <div class="dci_maintext_wrapper">
+                    <h1 class="dci_main_title">Dynamic Code Injection</h1>
+                    <div class="dci_main_desc">
+                        <p>Dynamic Code Injection is a tool that allows you to increase your productivity by decreasing time that you generally wasting when waiting for project recompilation and restart on device. Main idea behind this tool is to allow you to change his code and see new results immediately. It is not matter of recompilation it is matter of decreasing time interval from code or resources changes to actual result. If you still don't understand what this tool for, just look to it's features.</p>
+                    </div>
+                    <div class="dci_clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dci_download_wrapper">
+            <div class="dci_wrapper">
+                <div class="dci_illustration_wrapper">
+                    <button class="dci_download" onClick="window.location.href='#your_file_address'">Download</button>
+                    <img src="img/main_illustration.png" alt="Dynamic Code Injection for iOS">
+                </div>
+            </div>
+        </div>
+
+        <div id="feature" class="section dci_wrapper_for_top_rules dci_features_wrapper">
+            <div class="dci_wrapper ">
+                <article>
+                    <h2 class="dci_feature_title">Features</h2>
+
+                    <ul class="dci_feature_list">
+                        <li><a href="#"><img src="img/features_1.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/features_2.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/features_3.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/features_1.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/features_2.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/features_3.png" alt=""></a></li>
+                    </ul>
+                    <div class="dci_clearfix"></div>
+                </article>
+            </div>
+        </div>
+
+        <div id="about" class="section dci_wrapper_for_top_rules dci_about_wrapper">
+            <div class="dci_wrapper">
+                <article>
+                    <h2 class="dci_about_title">About Us</h2>
+
+                    <div class="dci_about_text">
+                        <img src="img/trollo-team.png" alt="Team">
+                        <p>For all the hype, there is scant evidence of a game-changing vice presidential debate in our political history and plenty of reason to believe there is but one overriding challenge. "The key for both VP candidates is to come across as competent potential presidents," said Ayres. "If they pass that test, then they have done their jobs." Still, given the moment, even Ayres concedes Thursday night's showdown does matter some.</p>
+                        <p>"A great performance by Ryan will keep Republican momentum going and will help his post-2012 political career," he said. "But it's not likely to have a large impact on the presidential race one way or another."</p>
+                    </div>
+                    <div class="dci_clearfix"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <footer class="dci_footer_wrapper">
+        <div class="dci_wrapper">
+            <p class="dci_footer_copyright">&copy; 2012 Stanfy</p>
+            <a href="#" class="dci_footer_contact_link" target="_blank">Contact Us</a>
+            <div class="dci_clearfix"></div>
+        </div>
+    </footer>
+</body>
+</html>
