@@ -1,5 +1,5 @@
 /* Common styles */
-body,html{
+body, html{
     font:10pt/1.4em "Myriad Pro";
     margin: 0;
     padding: 0;
@@ -102,6 +102,8 @@ a.dci_donate_us:active{
 }
 .dci_main_desc p{
     margin:0 0 10px;
+    font-family: Arial;
+    font-size:14pt;
 }
 
 /* DCI Download Row */
@@ -169,6 +171,8 @@ a.dci_donate_us:active{
 }
 .dci_about_text p{
     overflow: hidden;
+    font-family: Arial;
+    font-size:14pt;
 }
 
 /* DCI Footer */
